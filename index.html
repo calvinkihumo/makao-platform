@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#123c32">
+<title>MAKAO — Find your place</title>
+<style>
+:root{--green:#123c32;--green2:#1c5948;--cream:#f7f5ef;--ink:#17221e;--muted:#69756f;--line:#e5e8e2;--gold:#e7b65c;--white:#fff}
+*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font:15px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial}
+button,input,select{font:inherit}button{cursor:pointer}.topbar{background:var(--green);color:white;padding:15px max(20px,calc((100% - 1180px)/2));display:flex;align-items:center;justify-content:space-between;gap:16px;position:sticky;top:0;z-index:5}.brand{font-size:25px;font-weight:850;letter-spacing:1.5px}.brand span{color:var(--gold)}.nav{display:flex;gap:8px;flex-wrap:wrap}.nav button{border:0;background:transparent;color:#e8f0eb;padding:9px 12px;border-radius:10px}.nav button.active,.nav button:hover{background:#ffffff20;color:white}.wrap{max-width:1180px;margin:auto;padding:28px 20px 60px}.hero{background:linear-gradient(115deg,#123c32f5,#123c32b8),linear-gradient(25deg,#244e40,#8b9b82);color:white;border-radius:24px;padding:clamp(26px,5vw,54px);position:relative;overflow:hidden}.hero:after{content:"";position:absolute;width:280px;height:280px;border:1px solid #ffffff24;border-radius:50%;right:-60px;top:-90px;box-shadow:0 0 0 35px #ffffff08,0 0 0 75px #ffffff06}.eyebrow{text-transform:uppercase;letter-spacing:2px;font-size:11px;font-weight:800;color:#e8c77f}.hero h1{font-size:clamp(34px,5vw,57px);line-height:1.05;max-width:650px;margin:12px 0}.hero p{max-width:560px;color:#e0e9e3;margin:0 0 25px}.search{display:grid;grid-template-columns:1.3fr 1fr 1fr auto;gap:10px;background:white;padding:10px;border-radius:16px;max-width:930px;position:relative;z-index:1}.field{padding:5px 10px;border-right:1px solid var(--line)}.field label{display:block;font-size:11px;font-weight:800;color:var(--muted);margin-bottom:3px}.field input,.field select{width:100%;border:0;outline:0;background:white;color:var(--ink);min-width:0}.primary{background:var(--gold);color:#1e281f;border:0;border-radius:12px;font-weight:800;padding:12px 20px}.primary:hover{filter:brightness(.96)}.section-head{display:flex;align-items:end;justify-content:space-between;gap:15px;margin:32px 0 16px}.section-head h2{font-size:25px;letter-spacing:-.5px;margin:0}.section-head p{margin:3px 0 0;color:var(--muted)}.subtle{color:var(--muted);font-size:13px}.filters{display:flex;gap:8px;flex-wrap:wrap;margin:15px 0 20px}.chip{border:1px solid var(--line);background:white;border-radius:30px;padding:8px 13px;color:#45534b}.chip.active{background:var(--green);color:white;border-color:var(--green)}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.stay{background:white;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 5px 18px #1b352508}.photo{height:190px;position:relative;display:flex;align-items:center;justify-content:center;background:#d9e2d7;overflow:hidden}.photo img{width:100%;height:100%;object-fit:cover}.photo .fallback{font-size:62px}.tag{position:absolute;left:12px;top:12px;background:#fffef0eF;padding:5px 9px;border-radius:30px;font-size:11px;font-weight:800}.heart{position:absolute;right:12px;top:12px;border:0;border-radius:50%;width:35px;height:35px;background:#ffffffed;font-size:18px}.staybody{padding:15px}.location{color:var(--muted);font-size:12px}.stay h3{margin:5px 0;font-size:17px}.rating{font-size:12px;color:#9b6d19}.desc{font-size:13px;color:var(--muted);min-height:39px;margin:8px 0}.price-row{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--line);padding-top:12px;margin-top:12px}.price strong{font-size:18px}.price span{font-size:12px;color:var(--muted)}.smallbtn{border:0;background:var(--green);color:white;padding:9px 13px;border-radius:10px;font-weight:700}.smallbtn:hover{background:var(--green2)}.panel{background:white;border:1px solid var(--line);border-radius:18px;padding:22px;margin-top:22px}.panel h2,.panel h3{margin-top:0}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}.stat{background:#f5f7f3;border-radius:14px;padding:16px}.stat span{font-size:12px;color:var(--muted)}.stat strong{display:block;font-size:25px}.formgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.formgrid label{font-size:12px;color:var(--muted);font-weight:700;display:block;margin-bottom:5px}.formgrid input,.formgrid select{width:100%;padding:12px;border:1px solid var(--line);border-radius:10px;background:#fff}.formgrid .full{grid-column:1/-1}.notice{padding:12px 14px;background:#edf5ee;border:1px solid #d5e6d7;border-radius:12px;color:#244c37;font-size:13px;margin:12px 0}.booking{display:flex;justify-content:space-between;align-items:center;gap:12px;border-bottom:1px solid var(--line);padding:14px 0}.booking:last-child{border-bottom:0}.status{font-size:11px;font-weight:800;background:#fff0d8;color:#805516;padding:5px 8px;border-radius:20px}.status.confirmed{background:#e0f3e7;color:#1d6840}.empty{padding:35px;text-align:center;color:var(--muted);background:#fff;border:1px dashed #cbd5cc;border-radius:16px}.footer{margin-top:38px;padding:25px 0;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;color:var(--muted);font-size:12px}.hidden{display:none!important}.modalback{position:fixed;inset:0;background:#0b201bb5;display:flex;align-items:center;justify-content:center;padding:18px;z-index:10}.modal{background:white;width:min(560px,100%);max-height:90vh;overflow:auto;border-radius:20px;padding:24px}.modalhead{display:flex;justify-content:space-between;align-items:center;gap:12px}.close{border:0;background:#eef1ed;border-radius:50%;width:36px;height:36px;font-size:20px}.modal h2{margin:0}.total{display:flex;justify-content:space-between;font-size:17px;font-weight:800;border-top:1px solid var(--line);padding-top:14px;margin-top:14px}
+@media(max-width:800px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.search{grid-template-columns:1fr 1fr}.field:nth-child(2){border-right:0}.search .primary{grid-column:1/-1}.topbar{align-items:flex-start;flex-direction:column}.nav{width:100%}.nav button{padding:8px 10px}}
+@media(max-width:540px){.wrap{padding:18px 13px 40px}.grid{grid-template-columns:1fr}.photo{height:210px}.search{grid-template-columns:1fr}.field{border-right:0;border-bottom:1px solid var(--line);padding:9px}.stats{grid-template-columns:1fr 1fr}.formgrid{grid-template-columns:1fr}.formgrid .full{grid-column:auto}.section-head{align-items:flex-start;flex-direction:column}.footer{flex-direction:column}.hero{border-radius:18px}}
+</style>
+<meta name="theme-color" content="#123b2a">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/makao-192.svg">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">MAK<span>AO</span></div>
+  <nav class="nav" aria-label="Main navigation">
+    <button class="active" data-view="discover">Discover stays</button>
+    <button data-view="bookings">My bookings <span id="bookingCount"></span></button>
+    <button data-view="owner">List your property</button>
+  </nav>
+</header>
+<main class="wrap">
+<section id="discoverView">
+  <div class="hero">
+    <div class="eyebrow">Stay somewhere memorable</div>
+    <h1>Your next stay starts with MAKAO.</h1>
+    <p>Discover welcoming stays across Tanzania. Find your place, compare options and request a booking in minutes.</p>
+    <div class="search">
+      <div class="field"><label for="destination">WHERE TO?</label><input id="destination" placeholder="Dar es Salaam, Zanzibar..." /></div>
+      <div class="field"><label for="checkin">CHECK-IN</label><input id="checkin" type="date" /></div>
+      <div class="field"><label for="guests">GUESTS</label><select id="guests"><option value="1">1 guest</option><option value="2" selected>2 guests</option><option value="3">3 guests</option><option value="4">4 guests</option><option value="5">5+ guests</option></select></div>
+      <button class="primary" id="searchBtn">Search stays</button>
+    </div>
+  </div>
+  <div class="section-head"><div><h2>Stays worth discovering</h2><p>Handpicked demo listings to explore the MAKAO experience.</p></div><span class="subtle" id="resultCount"></span></div>
+  <div class="filters" id="filters">
+    <button class="chip active" data-filter="All">All stays</button><button class="chip" data-filter="Apartment">Apartments</button><button class="chip" data-filter="Villa">Villas</button><button class="chip" data-filter="Hotel">Hotels</button><button class="chip" data-filter="Budget">Under TSh 100k</button>
+  </div>
+  <div class="grid" id="stayGrid"></div>
+  <div class="notice">Demo notice: listings, prices, ratings and booking requests are sample data. No payment is collected and no real reservation is made.</div>
+</section>
+<section id="bookingsView" class="hidden">
+  <div class="section-head"><div><h2>My bookings</h2><p>Review the booking requests you made in this browser.</p></div><button class="smallbtn" data-goto="discover">Explore stays</button></div>
+  <div class="panel" id="bookingList"></div>
+</section>
+<section id="ownerView" class="hidden">
+  <div class="section-head"><div><h2>Owner dashboard</h2><p>A simple preview of how property owners can manage their stays.</p></div></div>
+  <div class="stats"><div class="stat"><span>Sample properties</span><strong id="statProperties">4</strong></div><div class="stat"><span>Booking requests</span><strong id="statBookings">0</strong></div><div class="stat"><span>Potential monthly revenue</span><strong>TSh 2.8m</strong></div></div>
+  <div class="panel"><h3>List a property</h3><p class="subtle">Add a sample listing to see it appear in Discover. This demo stores information only in this browser.</p>
+  <form id="propertyForm" class="formgrid">
+    <div><label for="ownerName">Your name</label><input id="ownerName" required placeholder="e.g. Asha M." /></div>
+    <div><label for="propertyName">Property name</label><input id="propertyName" required placeholder="e.g. Ocean View Apartment" /></div>
+    <div><label for="propertyLocation">Location</label><input id="propertyLocation" required placeholder="e.g. Masaki, Dar es Salaam" /></div>
+    <div><label for="propertyType">Property type</label><select id="propertyType"><option>Apartment</option><option>Villa</option><option>Hotel</option><option>Guesthouse</option></select></div>
+    <div><label for="propertyPrice">Price per night (TSh)</label><input id="propertyPrice" type="number" min="10000" required placeholder="85000" /></div>
+    <div><label for="propertyRooms">Bedrooms</label><select id="propertyRooms"><option>Studio</option><option>1 bedroom</option><option>2 bedrooms</option><option>3+ bedrooms</option></select></div>
+    <div class="full"><label for="propertyDesc">Description</label><input id="propertyDesc" placeholder="What makes your place special?" /></div>
+    <div class="full"><button class="primary" type="submit">Add demo property</button></div>
+  </form></div>
+  <div class="panel"><h3>Your property listings</h3><div id="ownerListings"></div></div>
+</section>
+<footer class="footer"><div><strong>MAKAO</strong> · Find your place.</div><div>Early prototype · Tanzania first · Built for mobile</div></footer>
+</main>
+<div id="modalRoot"></div>
+<script>
+const starterStays=[
+{id:1,name:"Palm Haven Apartment",location:"Masaki, Dar es Salaam",type:"Apartment",price:95000,rating:"4.9",reviews:38,guests:3,emoji:"🌴",color:"#dce8d8",desc:"Bright modern apartment near cafés, shops and the coast.",owner:"MAKAO Demo Host"},
+{id:2,name:"Stone Town Heritage Stay",location:"Stone Town, Zanzibar",type:"Hotel",price:125000,rating:"4.8",reviews:64,guests:2,emoji:"🏛️",color:"#e9ddc9",desc:"A character-filled stay close to historic streets and local food.",owner:"MAKAO Demo Host"},
+{id:3,name:"Mbezi Family Villa",location:"Mbezi Beach, Dar es Salaam",type:"Villa",price:180000,rating:"4.9",reviews:21,guests:5,emoji:"🏡",color:"#dce7ed",desc:"Room to relax with family, a private garden and easy beach access.",owner:"MAKAO Demo Host"},
+{id:4,name:"Kariakoo City Rooms",location:"Kariakoo, Dar es Salaam",type:"Hotel",price:65000,rating:"4.5",reviews:47,guests:2,emoji:"🏙️",color:"#e6dfef",desc:"A practical city base near markets, transport and everyday essentials.",owner:"MAKAO Demo Host"},
+{id:5,name:"Arusha Garden Cottage",location:"Arusha, Tanzania",type:"Guesthouse",price:85000,rating:"4.8",reviews:29,guests:3,emoji:"🌿",color:"#e2e8ce",desc:"A peaceful garden hideaway before or after your northern circuit trip.",owner:"MAKAO Demo Host"},
+{id:6,name:"Nungwi Sunset Villa",location:"Nungwi, Zanzibar",type:"Villa",price:240000,rating:"5.0",reviews:16,guests:4,emoji:"🌅",color:"#f1dfc9",desc:"Airy island-style villa for slow mornings and golden-hour sunsets.",owner:"MAKAO Demo Host"}
+];
+let stays=[...starterStays],bookings=[],filter="All",searchTerm="";
+const money=n=>"TSh "+Number(n).toLocaleString("en-TZ");
+const $=id=>document.getElementById(id);
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+function renderStays(){
+ let shown=stays.filter(s=>(filter==="All"||s.type===filter||(filter==="Budget"&&s.price<100000))&&(!searchTerm||(s.location+" "+s.name).toLowerCase().includes(searchTerm.toLowerCase()))&&s.guests>=Number($("guests").value));
+ $("resultCount").textContent=shown.length+" stays";
+ $("stayGrid").innerHTML=shown.length?shown.map(s=>`<article class="stay"><div class="photo" style="background:${s.color}"><span class="fallback">${s.emoji}</span><span class="tag">${escapeHtml(s.type)}</span><button class="heart" aria-label="Save ${escapeHtml(s.name)}" onclick="this.textContent=this.textContent==='♡'?'♥':'♡'">♡</button></div><div class="staybody"><div class="location">⌖ ${escapeHtml(s.location)}</div><h3>${escapeHtml(s.name)}</h3><div class="rating">★ ${s.rating} <span class="subtle">(${s.reviews} reviews)</span></div><p class="desc">${escapeHtml(s.desc)}</p><div class="price-row"><div class="price"><strong>${money(s.price)}</strong><span> / night</span></div><button class="smallbtn" onclick="openBooking(${s.id})">View & book</button></div></div></article>`).join(""):`<div class="empty" style="grid-column:1/-1">No stays match that search. Try another location or filter.</div>`;
+}
+function goto(view){["discover","bookings","owner"].forEach(v=>$(v+"View").classList.toggle("hidden",v!==view));document.querySelectorAll("[data-view]").forEach(b=>b.classList.toggle("active",b.dataset.view===view));if(view==="bookings")renderBookings();if(view==="owner")renderOwner();}
+document.querySelectorAll("[data-view]").forEach(b=>b.addEventListener("click",()=>goto(b.dataset.view)));
+document.querySelectorAll("[data-goto]").forEach(b=>b.addEventListener("click",()=>goto(b.dataset.goto)));
+$("filters").addEventListener("click",e=>{const b=e.target.closest("[data-filter]");if(!b)return;filter=b.dataset.filter;document.querySelectorAll("[data-filter]").forEach(x=>x.classList.toggle("active",x===b));renderStays();});
+$("searchBtn").addEventListener("click",()=>{searchTerm=$("destination").value.trim();renderStays();$("stayGrid").scrollIntoView({behavior:"smooth",block:"start"});});
+$("destination").addEventListener("keydown",e=>{if(e.key==="Enter")$("searchBtn").click()});
+$("guests").addEventListener("change",renderStays);
+function openBooking(id){
+ const s=stays.find(x=>x.id===id);const date=$("checkin").value||new Date(Date.now()+86400000).toISOString().slice(0,10);
+ $("modalRoot").innerHTML=`<div class="modalback" onclick="if(event.target===this)closeModal()"><div class="modal"><div class="modalhead"><div><div class="eyebrow" style="color:#8b6b2b">Booking request</div><h2>${escapeHtml(s.name)}</h2></div><button class="close" onclick="closeModal()">×</button></div><p class="subtle">${escapeHtml(s.location)} · ${escapeHtml(s.type)}</p><form id="bookingForm" class="formgrid"><div class="full"><label for="guestFullName">Full name</label><input id="guestFullName" required placeholder="Your full name"/></div><div><label for="guestEmail">Email</label><input id="guestEmail" type="email" required placeholder="you@example.com"/></div><div><label for="guestPhone">Phone</label><input id="guestPhone" required placeholder="+255..."/></div><div><label for="bookingDate">Check-in date</label><input id="bookingDate" type="date" min="${new Date().toISOString().slice(0,10)}" value="${date}" required/></div><div><label for="nights">Nights</label><select id="nights"><option value="1">1 night</option><option value="2">2 nights</option><option value="3">3 nights</option><option value="4">4 nights</option><option value="7">7 nights</option></select></div><div class="full"><label for="guestNote">Message to host (optional)</label><input id="guestNote" placeholder="Any questions or special requests?"/></div><div class="full total"><span>Estimated total</span><span id="bookingTotal">${money(s.price)}</span></div><div class="full"><button class="primary" style="width:100%" type="submit">Send booking request</button><p class="subtle">Demo only: no payment is taken and the host is not contacted.</p></div></form></div></div>`;
+ const updateTotal=()=>{$("bookingTotal").textContent=money(s.price*Number($("nights").value));};
+ $("nights").addEventListener("change",updateTotal);
+ $("bookingForm").addEventListener("submit",e=>{e.preventDefault();bookings.unshift({id:Date.now(),stayId:s.id,stayName:s.name,location:s.location,guest:$("guestFullName").value,email:$("guestEmail").value,phone:$("guestPhone").value,date:$("bookingDate").value,nights:Number($("nights").value),total:s.price*Number($("nights").value),status:"Pending",note:$("guestNote").value});closeModal();updateCounts();goto("bookings");});
+}
+function closeModal(){$("modalRoot").innerHTML="";}
+function updateCounts(){$("bookingCount").textContent=bookings.length?`(${bookings.length})`:"";$("statBookings").textContent=bookings.length;}
+function renderBookings(){
+ $("bookingList").innerHTML=bookings.length?bookings.map(b=>`<div class="booking"><div><strong>${escapeHtml(b.stayName)}</strong><div class="subtle">${escapeHtml(b.location)} · ${escapeHtml(b.date)} · ${b.nights} night(s)</div><div class="subtle">Guest: ${escapeHtml(b.guest)} · ${money(b.total)}</div></div><span class="status">${b.status}</span></div>`).join(""):`<div class="empty"><div style="font-size:35px">🧳</div><h3>No bookings yet</h3><p>Your booking requests will appear here.</p><button class="smallbtn" data-goto="discover" onclick="goto('discover')">Find a stay</button></div>`;
+}
+$("propertyForm").addEventListener("submit",e=>{e.preventDefault();const s={id:Date.now(),name:$("propertyName").value.trim(),location:$("propertyLocation").value.trim(),type:$("propertyType").value,price:Number($("propertyPrice").value),rating:"New",reviews:0,guests:5,emoji:{"Apartment":"🏢","Villa":"🏡","Hotel":"🏨","Guesthouse":"🛏️"}[$("propertyType").value],color:"#dce7df",desc:$("propertyDesc").value.trim()||"A newly listed MAKAO demo property.",owner:$("ownerName").value.trim()};stays.unshift(s);e.target.reset();renderOwner();renderStays();alert("Demo property added! It is now visible under Discover stays.");});
+function renderOwner(){
+ $("statProperties").textContent=stays.length;
+ const mine=stays.filter(s=>!starterStays.some(b=>b.id===s.id));
+ $("ownerListings").innerHTML=mine.length?mine.map(s=>`<div class="booking"><div><strong>${escapeHtml(s.name)}</strong><div class="subtle">${escapeHtml(s.location)} · ${money(s.price)}/night</div></div><span class="status confirmed">Draft listing</span></div>`).join(""):`<p class="subtle">You have not added any properties yet. Use the form above to create your first demo listing.</p>`;
+}
+renderStays();renderOwner();updateCounts();
+</script>
+
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./service-worker.js").catch(err => {
+      console.warn("MAKAO offline support could not be enabled:", err);
+    });
+  });
+}
+</script>
+
+</body>
+</html>
